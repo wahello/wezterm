@@ -1,3 +1,42 @@
+## Installing on Linux via Flathub
+
+WezTerm is available in flatpak format and published on
+[Flathub](https://flathub.org/apps/details/org.wezfurlong.wezterm), which is
+aggregated into the GNOME Software application and other similar
+storefront/software catalog applications.
+
+<a href='https://flathub.org/apps/details/org.wezfurlong.wezterm'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+
+To install using the command line:
+
+First, [setup flatpak on your system](https://flatpak.org/setup/), then:
+
+```bash
+flatpak install flathub org.wezfurlong.wezterm
+```
+
+and then run:
+
+```bash
+flatpak run org.wezfurlong.wezterm
+```
+
+You may wish to define an alias for convenience:
+
+```bash
+alias wezterm='flatpak run org.wezfurlong.wezterm'
+```
+
+Note: flatpaks run in a sandbox so some functionality may behave a little
+differently when compared to installing the native package format for your
+system.  In particular, starting wezterm using `wezterm cli` subcommands will
+block on the first run since you logged in if you haven't already launched the
+gui.
+
+Only stable releases are allowed to be published to Flathub, so if
+you want/need to try a nightly download you will need to use one of
+the other options below.
+
 ## Installing on Linux using AppImage
 
 WezTerm is available in [AppImage](https://appimage.org/) format; a
@@ -44,13 +83,12 @@ you can try the AppImage download which should work on most Linux systems.
 |------------|------------------|---------------------|
 |Ubuntu18    |[{{ ubuntu18_deb_stable_asset }}]({{ ubuntu18_deb_stable }}) |[{{ ubuntu18_deb_nightly_asset }}]({{ ubuntu18_deb_nightly }})|
 |Ubuntu20    |[{{ ubuntu20_deb_stable_asset }}]({{ ubuntu20_deb_stable }})  |[{{ ubuntu20_deb_nightly_asset }}]({{ ubuntu20_deb_nightly }})|
-|Ubuntu22    |Nightly builds only|[{{ ubuntu22_deb_nightly_asset }}]({{ ubuntu22_deb_nightly }})|
-|Debian9     |[{{ debian9_deb_stable_asset }}]({{ debian9_deb_stable }}) |[{{ debian9_deb_nightly_asset }}]({{ debian9_deb_nightly }})|
+|Ubuntu22    |[{{ ubuntu22_deb_stable_asset }}]({{ ubuntu22_deb_stable }}) |[{{ ubuntu22_deb_nightly_asset }}]({{ ubuntu22_deb_nightly }})|
 |Debian10    |[{{ debian10_deb_stable_asset }}]({{ debian10_deb_stable }}) |[{{ debian10_deb_nightly_asset }}]({{ debian10_deb_nightly }})|
 |Debian11    |[{{ debian11_deb_stable_asset }}]({{ debian11_deb_stable }}) |[{{ debian11_deb_nightly_asset }}]({{ debian11_deb_nightly }})|
 
 To download and install from the CLI, you can use something like this, which
-shows how to install the Ubuntu 16 package:
+shows how to install the Ubuntu 20 package:
 
 ```bash
 curl -LO {{ ubuntu20_deb_stable }}
@@ -69,15 +107,15 @@ on most Linux systems.
 
 |Distro      | Stable           | Nightly             |
 |------------|------------------|---------------------|
-|CentOS7     |Nightly builds only |[{{ centos7_rpm_nightly_asset }}]({{ centos7_rpm_nightly }})|
+|CentOS7     |[{{ centos7_rpm_stable_asset }}]({{ centos7_rpm_stable }}) |[{{ centos7_rpm_nightly_asset }}]({{ centos7_rpm_nightly }})|
 |CentOS8     |[{{ centos8_rpm_stable_asset }}]({{ centos8_rpm_stable }}) |[{{ centos8_rpm_nightly_asset }}]({{ centos8_rpm_nightly }})|
 |CentOS9     |[{{ centos9_rpm_stable_asset }}]({{ centos9_rpm_stable }})|[{{ centos9_rpm_nightly_asset }}]({{ centos9_rpm_nightly }})|
 |Fedora33    |[{{ fedora33_rpm_stable_asset }}]({{ fedora33_rpm_stable }}) |[{{ fedora33_rpm_nightly_asset }}]({{ fedora33_rpm_nightly }})|
 |Fedora34    |[{{ fedora34_rpm_stable_asset }}]({{ fedora34_rpm_stable }}) |[{{ fedora34_rpm_nightly_asset }}]({{ fedora34_rpm_nightly }})|
 |Fedora35    |[{{ fedora35_rpm_stable_asset }}]({{ fedora35_rpm_stable }}) |[{{ fedora35_rpm_nightly_asset }}]({{ fedora35_rpm_nightly }})|
-|Fedora36    |Nightly builds only |[{{ fedora36_rpm_nightly_asset }}]({{ fedora36_rpm_nightly }})|
-|openSUSE Leap    |Nighty builds only|[{{ opensuse_leap_rpm_nightly_asset }}]({{ opensuse_leap_rpm_nightly }})|
-|openSUSE Tumbleweed    |Nighty builds only|[{{ opensuse_tumbleweed_rpm_nightly_asset }}]({{ opensuse_tumbleweed_rpm_nightly }})|
+|Fedora36    |[{{ fedora36_rpm_stable_asset }}]({{ fedora36_rpm_stable }})|[{{ fedora36_rpm_nightly_asset }}]({{ fedora36_rpm_nightly }})|
+|openSUSE Leap    |[{{ opensuse_leap_rpm_stable_asset }}]({{ opensuse_leap_rpm_stable }})|[{{ opensuse_leap_rpm_nightly_asset }}]({{ opensuse_leap_rpm_nightly }})|
+|openSUSE Tumbleweed    |[{{ opensuse_tumbleweed_rpm_stable_asset }}]({{ opensuse_tumbleweed_rpm_stable }})|[{{ opensuse_tumbleweed_rpm_nightly_asset }}]({{ opensuse_tumbleweed_rpm_nightly }})|
 
 To download and install from the CLI you can use something like this, which
 shows how to install the Fedora 35 package:
@@ -117,10 +155,10 @@ APKs are built out from the `main` branch.
 
 |Version | Stable        | Nightly |
 |--------|---------------|---------|
-| 3.12   |               |[{{ alpine3_12_apk_nightly_asset }}]({{ alpine3_12_apk_nightly }})|
-| 3.13   |               |[{{ alpine3_13_apk_nightly_asset }}]({{ alpine3_13_apk_nightly }})|
-| 3.14   |               |[{{ alpine3_14_apk_nightly_asset }}]({{ alpine3_14_apk_nightly }})|
-| 3.15   |               |[{{ alpine3_15_apk_nightly_asset }}]({{ alpine3_15_apk_nightly }})|
+| 3.12   |[{{ alpine3_12_apk_stable_asset }}]({{ alpine3_12_apk_stable }})|[{{ alpine3_12_apk_nightly_asset }}]({{ alpine3_12_apk_nightly }})|
+| 3.13   |[{{ alpine3_13_apk_stable_asset }}]({{ alpine3_13_apk_stable }})|[{{ alpine3_13_apk_nightly_asset }}]({{ alpine3_13_apk_nightly }})|
+| 3.14   |[{{ alpine3_14_apk_stable_asset }}]({{ alpine3_14_apk_stable }})|[{{ alpine3_14_apk_nightly_asset }}]({{ alpine3_14_apk_nightly }})|
+| 3.15   |[{{ alpine3_15_apk_stable_asset }}]({{ alpine3_15_apk_stable }})|[{{ alpine3_15_apk_nightly_asset }}]({{ alpine3_15_apk_nightly }})|
 
 ## Linuxbrew Tap
 
